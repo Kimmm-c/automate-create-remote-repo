@@ -6,7 +6,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = fh.read()
 
 setup(
-    name='create-remote-repo-and-push',
+    name='create-remote-repo',
     version='0.0.1',
     author='Kim Chung',
     author_email='kchung0802@gmail.com',
@@ -25,6 +25,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        create-remote-repo-and-push=create_remote_repo_and_push.create_remote_repo_and_push:main
+        create-remote-repo=create_remote_repo_and_push.create_remote_repo_and_push:main
     '''
 )

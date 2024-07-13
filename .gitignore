@@ -9,4 +9,4 @@ venv
 
 
 .idea/
-create_remote_repo_and_push.egg-info/
+create_remote_repo.egg-info/
