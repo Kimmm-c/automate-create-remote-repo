@@ -1,0 +1,12 @@
+# Caching
+__pycache__
+
+# Virtual Environment
+venv
+
+# For macOS
+.DS_Store
+
+
+.idea/
+create_remote_repo_and_push.egg-info/
