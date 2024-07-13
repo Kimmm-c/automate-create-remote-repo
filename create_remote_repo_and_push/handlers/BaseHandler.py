@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from ..models.request import Request
+from ..models.Repository import Repository
 
 
 class BaseHandler(ABC):
@@ -10,5 +10,5 @@ class BaseHandler(ABC):
         self.next_handler = next_handler
 
     @abstractmethod
-    def process(self, request: Request):
+    def process(self, request: Repository):
         pass

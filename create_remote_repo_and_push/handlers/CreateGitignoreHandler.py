@@ -1,9 +1,9 @@
 from .BaseHandler import BaseHandler
-from ..models.request import Request
+from ..models.Repository import Repository
 
 
 class CreateGitignoreHandler(BaseHandler):
-    def process(self, request: Request):
+    def process(self, request: Repository):
         print("processing create gitignore")
 
         if self.next_handler is not None:
