@@ -11,8 +11,10 @@ token = os.getenv('GITHUB_TOKEN')
 def validate_request(request):
     if request.repo_name is None:
         raise ValueError("Remote repository name is required")
-    elif request.working_directory is None:
-        raise ValueError("Local working directory to initialize the repo is required")
+    elif request.working_directory is None or not os.path.exists(request.working_directory):
+        raise ValueError("Path to working directory is either not provided or invalid")
+    elif request.github_token is None or request.github_username is None:
+        raise ValueError("No GitHub token or username found. Please check your global variables or manually enter them")
 
 
 def setup_request_commandline() -> Repository:
@@ -58,9 +60,15 @@ def main():
     if repo.include_gitignore:
         create_gitignore_handler = CreateGitignoreHandler()
         create_gitignore_handler.set_next_handler(create_repo_handler)
-        create_gitignore_handler.process(repo)
+        try:
+            create_gitignore_handler.process(repo)
+        except Exception as e:
+            print(e)
     else:
-        create_repo_handler.process(repo)
+        try:
+            create_repo_handler.process(repo)
+        except Exception as e:
+            print(e)
 
 
 if __name__ == '__main__':
