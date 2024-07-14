@@ -4,9 +4,13 @@ from ..models.Repository import Repository
 
 class CreateGitignoreHandler(BaseHandler):
     def process(self, request: Repository):
-        print("processing create gitignore")
+        # Prompt for .gitignore content
+        ignored_content = input("Please enter files/folders you want to add to .gitignore, separated by comma:\n")
+        clean_content_list = [content.strip() for content in ignored_content.split(",")]
 
-        if self.next_handler is not None:
-            self.next_handler.process(request)
-        else:
-            return
+        # Create .gitignore file & Write the content to the file
+        with open(".gitignore", "w") as gitignore:
+            for line in clean_content_list:
+                gitignore.write(f"\n{line}\n")
+
+        self.move_to_next_handler(request)

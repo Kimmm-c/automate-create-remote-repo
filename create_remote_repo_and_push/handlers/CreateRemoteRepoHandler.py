@@ -37,8 +37,4 @@ class CreateRemoteRepoHandler(BaseHandler):
             print(e)
             quit()
 
-        # Move to the next handler if exist
-        if self.next_handler is not None:
-            self.next_handler.process(request)
-        else:
-            return
+        self.move_to_next_handler(request)

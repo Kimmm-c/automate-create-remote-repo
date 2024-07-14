@@ -9,6 +9,12 @@ class BaseHandler(ABC):
     def set_next_handler(self, next_handler):
         self.next_handler = next_handler
 
+    def move_to_next_handler(self, request: Repository):
+        if self.next_handler is not None:
+            self.next_handler.process(request)
+        else:
+            return
+
     @abstractmethod
     def process(self, request: Repository):
         pass
