@@ -9,7 +9,7 @@ class CreateGitignoreHandler(BaseHandler):
         clean_content_list = [content.strip() for content in ignored_content.split(",")]
 
         # Create .gitignore file & Write the content to the file
-        with open(".gitignore", "w") as gitignore:
+        with open(f"{request.working_directory}/.gitignore", "a") as gitignore:
             for line in clean_content_list:
                 gitignore.write(f"\n{line}\n")
 
