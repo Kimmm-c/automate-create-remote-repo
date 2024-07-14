@@ -28,7 +28,7 @@ def setup_request_commandline() -> Repository:
                         help="Your Github authorization token",
                         default=token)
     parser.add_argument("-d", "--working-directory",
-                        help="The local working directory where the repo should be initialized")
+                        help="The absolute path to local working directory, where the repo should be initialized")
     parser.add_argument("-i", "--include-gitignore",
                         help="Enter y if you want to add .gitignore to your repo, otherwise enter n",
                         default="n")
