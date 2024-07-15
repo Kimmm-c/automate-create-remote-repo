@@ -19,7 +19,7 @@ This command line tool automates the process of initializing a local Git reposit
 
 ## Installation
 ```bash
-pip install craete-remote-repo
+pip install create-remote-repo
 ```
 
 ## Usage
