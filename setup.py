@@ -5,14 +5,6 @@ with open("README.md", "r", encoding="utf-8") as fh:
 with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = fh.read()
 
-
-def get_version():
-    version = {}
-    with open("./create_remote_repo_and_push/__init__.py") as f:
-        exec(f.read(), version)
-    return version["__version__"]
-
-
 setup(
     name='create-remote-repo',
     version="1.0.0",

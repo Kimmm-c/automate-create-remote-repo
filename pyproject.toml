@@ -7,23 +7,18 @@ name="create-remote-repo"
 dependencies=["requests~=2.31.0"]
 version="1.0.0"
 readme="README.md"
-license={file="LICENSE"}
+license={file = "LICENSE"}
 requires-python=">=3.10"
 authors=[
-    {name="Kim Chung", email="kchung0802@gmail.com"}
+    {name="Kim Chung", email="kchung0802@gmail.com"},
 ]
 description="This command line tool automates the process of initializing a local Git repository, creating a remote GitHub repository via the GitHub API, optionally adding a .gitignore file, staging changes, committing, and performing the initial push to the remote repository."
 classifiers=[
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: MacOS"
+    "Operating System :: MacOS",
 ]
 keywords=["github", "automation", "create", "remote repository"]
-
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["create_remote_repo_and_push"]
 
 
 [project.urls]
