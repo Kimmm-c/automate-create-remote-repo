@@ -18,15 +18,18 @@ This command line tool automates the process of initializing a local Git reposit
 - GitHub account and authorization token
 
 ## Installation
+```bash
+pip install craete-remote-repo
+```
 
 ## Usage
 ```bash
-python create-remote-repo -rn <repo-name> -gu <github-username> -t <github-token> -d <working-directory> [-i <include-gitignore>] [-p <private>]
+create-remote-repo -rn <repo-name> -gu <github-username> -t <github-token> -d <working-directory> [-i <include-gitignore>] [-p <private>]
 ```
 
 ## Example
 ```bash
-python create-remote-repo -rn my-new-repo -gu myusername -t mytoken -d /path/to/working/directory -i y -p y
+create-remote-repo -rn my-new-repo -gu myusername -t mytoken -d /path/to/working/directory -i y -p y
 ```
 
 This command will:
