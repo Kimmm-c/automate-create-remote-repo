@@ -10,5 +10,3 @@ venv
 
 .idea/
 create_remote_repo.egg-info/
-
-.bumpversion.cfg
