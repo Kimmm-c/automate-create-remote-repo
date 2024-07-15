@@ -2,6 +2,9 @@
 
 This command line tool automates the process of initializing a local Git repository, creating a remote GitHub repository via the GitHub API, optionally adding a `.gitignore` file, staging changes, committing, and performing the initial push to the remote repository.
 
+## Operating Systems
+MacOS
+
 ## Features
 
 - Initialize a local Git repository.
@@ -13,7 +16,7 @@ This command line tool automates the process of initializing a local Git reposit
 
 ## Requirements
 
-- Python 3.x
+- Python >=3.10
 - Git
 - GitHub account and authorization token
 
@@ -41,7 +44,39 @@ This command will:
 5. Commit the changes.
 6. Push the initial commit to the private remote repository.
 
+## Set up Environment Variables
+To avoid manually entering your GitHub username and token each time, you can set up environment variables.
+
+Follow these steps to permanently set up environment variables in MacOS:
+
+### Open You Shell Configuration File
+```bash
+nano ~/.zshrc
+```
+**Note**: Depending on your shell (like Bash or Zsh), edit the appropriate configuration file. For Bash, it's usually `~/.bash_profile` or `~/.bashrc`. For Zsh, it's `~/.zshrc`.
+
+### Add Environment Variables
+Add the following lines to the configuration file, replacing YOUR_GITHUB_USERNAME and YOUR_GITHUB_TOKEN with your GitHub credentials:
+```bash
+export GITHUB_USERNAME="YOUR_GITHUB_USERNAME"
+export GITHUB_TOKEN="YOUR_GITHUB_TOKEN"
+```
+
+### Reload the Config File to Apply Changes
+```bash
+source ~/.bash_profile   # For Bash
+source ~/.zshrc          # For Zsh
+```
+
+### Verify Environment Variables
+```bash
+echo $GITHUB_USERNAME
+echo $GITHUB_TOKEN
+```
+
+
 ## CLI Arguments
+
 | Argument                     | Description                                                                                      | Required | Default Value            |
 |------------------------------|--------------------------------------------------------------------------------------------------|----------|--------------------------|
 | `-rn`, `--repo-name`         | The name of the remote repository you want to create.                                            | Yes      | None                     |
