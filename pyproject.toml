@@ -5,7 +5,7 @@ build-backend="setuptools.build_meta"
 [project]
 name="create-remote-repo"
 dependencies=["requests~=2.31.0"]
-version="0.0.0"
+version="1.0.0"
 readme="README.md"
 license={file="LICENSE"}
 requires-python=">=3.10"

@@ -15,7 +15,7 @@ def get_version():
 
 setup(
     name='create-remote-repo',
-    version="0.0.0",
+    version="1.0.0",
     author='Kim Chung',
     author_email='kchung0802@gmail.com',
     license='MIT License',
